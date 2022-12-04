@@ -1,0 +1,24 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.listAction {
+    display: flex;
+    list-style: none;
+}
+
+.listAction button {
+    padding: 5px 10px;
+    margin-left: 16px;
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    border-color: transparent;
+    background-color: #eee;
+}
+
+hr {
+    margin: 16px 0px 32px;
+    border: 1px solid #777;
+}

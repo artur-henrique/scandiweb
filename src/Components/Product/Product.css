@@ -1,0 +1,12 @@
+.product {
+    padding: 16px;
+    min-width: 200px;
+    list-style: none;
+    border: 1px solid #6e6e6e;
+    border-radius: 4px;
+    box-shadow: 4px 4px 4px rgba(0,0,0, .4);
+}
+
+.product p {
+    text-align: center;
+}
