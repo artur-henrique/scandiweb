@@ -1,0 +1,12 @@
+label {
+    /* border: 1px solid red; */
+    display: inline-block;
+    width: 100px;
+    margin: 8px 0;
+}
+
+input[type="submit"] {
+    display: block;
+    margin-top: 8px;
+    padding: 4px 8px;
+}
