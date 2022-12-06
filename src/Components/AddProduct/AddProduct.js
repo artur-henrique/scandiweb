@@ -1,16 +1,75 @@
-import Header from '../Header/Header';
+import { useState, useRef } from 'react';
+
+import HeaderProduct from '../HeaderProduct/HeaderProduct';
 import Footer from '../Footer/Footer';
 import Form from '../Form/Form';
 
 const AddProduct = () => {
+    const timeoutRef = useRef();
+
+    const [ invalid, setInvalid ] = useState(false);
+ 
+    const [ sku, setSku ] = useState('');
+    const [ name, setName ] = useState('');
+    const [ price, setPrice ] = useState('');
+    const [ type, setType ] = useState('');
+    const [ bookWeight, setBookWeight ] = useState('');
+    const [ dvdSize, setDvdSize ] = useState('');
+    const [ furnitureHeight, setFurnitureHeight ] = useState('');
+    const [ furnitureWidth, setFurnitureWidth ] = useState('');
+    const [ furnitureLength, setFurnitureLength ] = useState('');
+
     return (
         <>
-            <Header 
+            <HeaderProduct 
                 title="Product Add"
                 btnTitle1="Save"
                 btnTitle2="Cancel"
+                timeoutRef={timeoutRef}
+
+                invalid={invalid}
+                setInvalid={setInvalid}
+                sku={sku}
+                setSku={setSku}
+                name={name}
+                setName={setName}
+                price={price}
+                setPrice={setPrice}
+                type={type}
+                setType={setType}
+                bookWeight={bookWeight}
+                setBookWeight={setBookWeight}
+                dvdSize={dvdSize}
+                setDvdSize={setDvdSize}
+                furnitureHeight={furnitureHeight}
+                setFurnitureHeight={setFurnitureHeight}
+                furnitureWidth={furnitureWidth}
+                setFurnitureWidth={setFurnitureWidth}
+                furnitureLength={furnitureLength}
+                setFurnitureLength={setFurnitureLength}
             />
-            <Form />
+            <Form
+                invalid={invalid}
+                setInvalid={setInvalid}
+                sku={sku}
+                setSku={setSku}
+                name={name}
+                setName={setName}
+                price={price}
+                setPrice={setPrice}
+                type={type}
+                setType={setType}
+                bookWeight={bookWeight}
+                setBookWeight={setBookWeight}
+                dvdSize={dvdSize}
+                setDvdSize={setDvdSize}
+                furnitureHeight={furnitureHeight}
+                setFurnitureHeight={setFurnitureHeight}
+                furnitureWidth={furnitureWidth}
+                setFurnitureWidth={setFurnitureWidth}
+                furnitureLength={furnitureLength}
+                setFurnitureLength={setFurnitureLength}
+            />
             <Footer />
         </>
     )

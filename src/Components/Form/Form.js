@@ -1,36 +1,34 @@
-import { useState } from 'react';
-
 import './Form.css';
 
-const Form = () => {
-    const [ type, setType ] = useState(null);
-
-    function handleChange({target}) {
-        setType(target.value);
-    }
-
-    function handleSubmit (e) {
-        e.preventDefault();
-    }
+const Form = (props) => {
 
     return (
         <form id="product_form">
+            { props.invalid && <p className="invalid-data">Please, submit required data</p>}
             <div>
-                <label for="sku">SKU</label>
-                <input type="text" id="sku" required />
+                <label htmlFor="sku">SKU</label>
+                <input onChange={(e) => props.setSku(e.target.value)} value={props.sku} type="text" id="sku" required />
             </div>
             <div>
-                <label for="name">Name</label>
-                <input type="text" id="name" required />
+                <label htmlFor="name">Name</label>
+                <input onChange={(e) => props.setName(e.target.value)} value={props.name} type="text" id="name" required />
             </div>
             <div>
-                <label for="price">Price</label>
-                <input type="text" id="price" required />
+                <label htmlFor="price">Price</label>
+                <input onChange={(e) => props.setPrice(e.target.value)} value={props.price} type="text" id="price" required />
             </div>
 
             <div>
-                <label for="productType">Type Switcher</label>
-                <select onChange={handleChange} name="type" id="productType" required>
+                <label htmlFor="productType">Type Switcher</label>
+                <select onChange={(e) => {
+                    props.setType(e.target.value);
+                    props.setBookWeight('');
+                    props.setDvdSize('');
+                    props.setFurnitureHeight('');
+                    props.setFurnitureWidth('');
+                    props.setFurnitureLength('');
+                }} 
+                name="type" id="productType" required>
                     <option value=""></option>
                     <option value="book">Book</option>
                     <option value="dvd">DVD</option>
@@ -39,46 +37,44 @@ const Form = () => {
             </div>
 
 
-            {type === 'dvd' && 
+            {props.type === 'dvd' && 
                 <>
                     <div>
-                        <label for="size">Size (MB)</label>
-                        <input type="text" id="size" required />
+                        <label htmlFor="size">Size (MB)</label>
+                        <input onChange={(e) => props.setDvdSize(e.target.value)} value={props.dvdSize}  type="text" id="size" required />
                     </div>
                     <small>* Please, provide size in MB.</small>
                 </>
             }
 
 
-            {type === 'furniture' &&
+            {props.type === 'furniture' &&
                 <>
                     <div>
-                        <label for="height">Height (CM)</label>
-                        <input type="text" id="height" required />
+                        <label htmlFor="height">Height (CM)</label>
+                        <input onChange={(e) => props.setFurnitureHeight(e.target.value)} value={props.furnitureHeight}  type="text" id="height" required />
                     </div>
                     <div>
-                        <label for="width">Width</label>
-                        <input type="text" id="width" required />
+                        <label htmlFor="width">Width</label>
+                        <input onChange={(e) => props.setFurnitureWidth(e.target.value)} value={props.furnitureWidth}  type="text" id="width" required />
                     </div>
                     <div>
-                        <label for="length">Length</label>
-                        <input type="text" id="length" required />
+                        <label htmlFor="length">Length</label>
+                        <input onChange={(e) => props.setFurnitureLength(e.target.value)} value={props.furnitureLength}  type="text" id="length" required />
                     </div>
                     <small>* Please, provide dimensions in centimeters.</small>
                 </>
             }
 
-            {type === 'book' &&
+            {props.type === 'book' &&
                 <>
                     <div>
-                        <label for="weight">Weight (KG)</label>
-                        <input type="text" id="weight" required />
+                        <label htmlFor="weight">Weight (KG)</label>
+                        <input onChange={(e) => props.setBookWeight(e.target.value)} value={props.bookWeight}  type="text" id="weight" required />
                     </div>
                     <small>* Please, provide weight in KG.</small>
                 </>
             }
-
-            <input onClick={handleSubmit} type="submit" value="Enviar" />
 
         </form>
     )
