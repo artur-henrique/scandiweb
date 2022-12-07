@@ -55,11 +55,11 @@ const Form = (props) => {
                         <input onChange={(e) => props.setFurnitureHeight(e.target.value)} value={props.furnitureHeight}  type="text" id="height" required />
                     </div>
                     <div>
-                        <label htmlFor="width">Width</label>
+                        <label htmlFor="width">Width (CM)</label>
                         <input onChange={(e) => props.setFurnitureWidth(e.target.value)} value={props.furnitureWidth}  type="text" id="width" required />
                     </div>
                     <div>
-                        <label htmlFor="length">Length</label>
+                        <label htmlFor="length">Length (CM)</label>
                         <input onChange={(e) => props.setFurnitureLength(e.target.value)} value={props.furnitureLength}  type="text" id="length" required />
                     </div>
                     <small>* Please, provide dimensions in centimeters.</small>

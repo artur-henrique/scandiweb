@@ -19,3 +19,7 @@ input[type="submit"] {
     background-color: rgb(212, 35, 35);
     color: #fff;
 }
+
+small {
+    font-weight: 700;
+}

@@ -78,7 +78,7 @@ const HeaderProduct = (props) => {
     
         if (props.type === 'furniture') {
             if (!props.furnitureHeight || isNaN(props.furnitureHeight) || !props.furnitureWidth || isNaN(props.furnitureWidth) || !props.furnitureLength || isNaN(props.furnitureLength)) {
-                props.setMessage('Furniture dimensions must be filled with centimeters (number).');
+                props.setMessage('Furniture dimensions must be filled with number (in centimeters).');
                 return handleInvalid();
             } else {
                 Object.assign(data, { attribute: `${props.furnitureHeight}x${props.furnitureWidth}x${props.furnitureLength}` });
