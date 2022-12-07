@@ -1,13 +1,13 @@
 import { useState, useRef } from 'react';
 
 import HeaderProduct from '../HeaderProduct/HeaderProduct';
-import Footer from '../Footer/Footer';
 import Form from '../Form/Form';
 
 const AddProduct = () => {
     const timeoutRef = useRef();
 
     const [ invalid, setInvalid ] = useState(false);
+    const [ message, setMessage ] = useState('Please, submit required data');
  
     const [ sku, setSku ] = useState('');
     const [ name, setName ] = useState('');
@@ -27,6 +27,8 @@ const AddProduct = () => {
                 btnTitle2="Cancel"
                 timeoutRef={timeoutRef}
 
+                message={message}
+                setMessage={setMessage}
                 invalid={invalid}
                 setInvalid={setInvalid}
                 sku={sku}
@@ -49,6 +51,8 @@ const AddProduct = () => {
                 setFurnitureLength={setFurnitureLength}
             />
             <Form
+                message={message}
+                setMessage={setMessage}
                 invalid={invalid}
                 setInvalid={setInvalid}
                 sku={sku}
@@ -70,7 +74,6 @@ const AddProduct = () => {
                 furnitureLength={furnitureLength}
                 setFurnitureLength={setFurnitureLength}
             />
-            <Footer />
         </>
     )
 }

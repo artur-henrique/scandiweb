@@ -4,7 +4,7 @@ const Form = (props) => {
 
     return (
         <form id="product_form">
-            { props.invalid && <p className="invalid-data">Please, submit required data</p>}
+            { props.invalid && <p className="invalid-data">{props.message}</p>}
             <div>
                 <label htmlFor="sku">SKU</label>
                 <input onChange={(e) => props.setSku(e.target.value)} value={props.sku} type="text" id="sku" required />

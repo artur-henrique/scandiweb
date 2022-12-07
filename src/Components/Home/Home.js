@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import ProductList from "../ProductList/ProductList";
 
@@ -43,17 +42,16 @@ const Home = () => {
 
     return(
         <>
-        <Header 
-            title="Product List"
-            btnTitle1="ADD"
-            btnTitle2="MASS DELETE"
-            btnID="delete-product-btn"
-            callbackFunc={fetchDelete}
-        />
-        <ProductList 
-            data={data}
-        />
-        <Footer />
+            <Header 
+                title="Product List"
+                btnTitle1="ADD"
+                btnTitle2="MASS DELETE"
+                btnID="delete-product-btn"
+                callbackFunc={fetchDelete}
+            />
+            <ProductList 
+                data={data}
+            />
         </>
     )
 }
