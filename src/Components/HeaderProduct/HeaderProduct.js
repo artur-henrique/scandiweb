@@ -16,6 +16,7 @@ const HeaderProduct = (props) => {
         })
         const ok = await response.ok;
         
+        // console.log(response);
         if (!ok) {
             const json = await response.json();
             if(json === 1062) {
@@ -81,6 +82,11 @@ const HeaderProduct = (props) => {
                 return handleInvalid();
             }
 
+            if (bookWeight < 0) {
+                props.setMessage('Book weight must be more than 0.');
+                return handleInvalid();
+            }
+
             Object.assign(data, { attribute: bookWeight });
         }
     
@@ -115,7 +121,7 @@ const HeaderProduct = (props) => {
             <div className="header">
             <h1>{props.title}</h1>
             <ul className="listAction">
-                <li><button onClick={handleSubmit} >{props.btnTitle1}</button></li>
+                <li><button className='save' onClick={handleSubmit} >{props.btnTitle1}</button></li>
                 <li id={props.btnID}><button onClick={() => navigate('/')}>{props.btnTitle2}</button></li>
             </ul>
             </div>

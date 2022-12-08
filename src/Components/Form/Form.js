@@ -14,7 +14,7 @@ const Form = (props) => {
                 <input onChange={(e) => props.setName(e.target.value)} value={props.name} type="text" id="name" required />
             </div>
             <div>
-                <label htmlFor="price">Price</label>
+                <label htmlFor="price">Price ($)</label>
                 <input onChange={(e) => props.setPrice(e.target.value)} value={props.price} type="number" id="price" required />
             </div>
 
@@ -41,7 +41,7 @@ const Form = (props) => {
                 <>
                     <div>
                         <label htmlFor="size">Size (MB)</label>
-                        <input onChange={(e) => props.setDvdSize(e.target.value)} value={props.dvdSize}  type="text" id="size" required />
+                        <input onChange={(e) => props.setDvdSize(e.target.value)} value={props.dvdSize}  type="number" id="size" required />
                     </div>
                     <small>* Please, provide size in MB.</small>
                 </>
@@ -52,15 +52,15 @@ const Form = (props) => {
                 <>
                     <div>
                         <label htmlFor="height">Height (CM)</label>
-                        <input onChange={(e) => props.setFurnitureHeight(e.target.value)} value={props.furnitureHeight}  type="text" id="height" required />
+                        <input onChange={(e) => props.setFurnitureHeight(e.target.value)} value={props.furnitureHeight}  type="number" id="height" required />
                     </div>
                     <div>
                         <label htmlFor="width">Width (CM)</label>
-                        <input onChange={(e) => props.setFurnitureWidth(e.target.value)} value={props.furnitureWidth}  type="text" id="width" required />
+                        <input onChange={(e) => props.setFurnitureWidth(e.target.value)} value={props.furnitureWidth}  type="number" id="width" required />
                     </div>
                     <div>
                         <label htmlFor="length">Length (CM)</label>
-                        <input onChange={(e) => props.setFurnitureLength(e.target.value)} value={props.furnitureLength}  type="text" id="length" required />
+                        <input onChange={(e) => props.setFurnitureLength(e.target.value)} value={props.furnitureLength}  type="number" id="length" required />
                     </div>
                     <small>* Please, provide dimensions in centimeters.</small>
                 </>

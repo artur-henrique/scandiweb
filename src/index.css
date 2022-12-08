@@ -9,6 +9,10 @@
     margin: 32px auto;
 }
 
+main {
+    min-height: 70vh;
+}
+
 @media (max-width: 960px) {
     .App {
         margin: 32px;

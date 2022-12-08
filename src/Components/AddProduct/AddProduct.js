@@ -50,30 +50,32 @@ const AddProduct = () => {
                 furnitureLength={furnitureLength}
                 setFurnitureLength={setFurnitureLength}
             />
-            <Form
-                message={message}
-                setMessage={setMessage}
-                invalid={invalid}
-                setInvalid={setInvalid}
-                sku={sku}
-                setSku={setSku}
-                name={name}
-                setName={setName}
-                price={price}
-                setPrice={setPrice}
-                type={type}
-                setType={setType}
-                bookWeight={bookWeight}
-                setBookWeight={setBookWeight}
-                dvdSize={dvdSize}
-                setDvdSize={setDvdSize}
-                furnitureHeight={furnitureHeight}
-                setFurnitureHeight={setFurnitureHeight}
-                furnitureWidth={furnitureWidth}
-                setFurnitureWidth={setFurnitureWidth}
-                furnitureLength={furnitureLength}
-                setFurnitureLength={setFurnitureLength}
-            />
+            <main>
+                <Form
+                    message={message}
+                    setMessage={setMessage}
+                    invalid={invalid}
+                    setInvalid={setInvalid}
+                    sku={sku}
+                    setSku={setSku}
+                    name={name}
+                    setName={setName}
+                    price={price}
+                    setPrice={setPrice}
+                    type={type}
+                    setType={setType}
+                    bookWeight={bookWeight}
+                    setBookWeight={setBookWeight}
+                    dvdSize={dvdSize}
+                    setDvdSize={setDvdSize}
+                    furnitureHeight={furnitureHeight}
+                    setFurnitureHeight={setFurnitureHeight}
+                    furnitureWidth={furnitureWidth}
+                    setFurnitureWidth={setFurnitureWidth}
+                    furnitureLength={furnitureLength}
+                    setFurnitureLength={setFurnitureLength}
+                />
+            </main>
         </>
     )
 }

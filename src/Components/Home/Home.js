@@ -15,7 +15,7 @@ const Home = () => {
             setData(data);
         }
         getData();
-    }, []);
+    }, [deleteProductCount]);
     
     function fetchDelete() {
         const nodeCheckboxes = document.querySelectorAll('.delete-checkbox');
@@ -25,10 +25,9 @@ const Home = () => {
                 sku: checkEl.nextSibling.innerText
             }
         });
-        console.log(skuList);
         
-        skuList.forEach(async (product) => {
-            await fetch('http://localhost:8080', {
+        const promises = skuList.map(async (product) => {
+            return fetch('http://localhost:8080', {
                 method: "DELETE",
                 headers: {
                     'Content-Type': 'application/json'
@@ -37,7 +36,10 @@ const Home = () => {
             })
         });
 
-        setDeleteProductCount(deleteProductCount + 1);
+        Promise.all(promises).then(values => {
+            setDeleteProductCount(deleteProductCount + 1);
+        })
+
     }
 
     return (
