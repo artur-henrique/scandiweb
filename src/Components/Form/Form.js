@@ -15,7 +15,7 @@ const Form = (props) => {
             </div>
             <div>
                 <label htmlFor="price">Price</label>
-                <input onChange={(e) => props.setPrice(e.target.value)} value={props.price} type="text" id="price" required />
+                <input onChange={(e) => props.setPrice(e.target.value)} value={props.price} type="number" id="price" required />
             </div>
 
             <div>
@@ -70,7 +70,7 @@ const Form = (props) => {
                 <>
                     <div>
                         <label htmlFor="weight">Weight (KG)</label>
-                        <input onChange={(e) => props.setBookWeight(e.target.value)} value={props.bookWeight}  type="text" id="weight" required />
+                        <input onChange={(e) => props.setBookWeight(e.target.value)} value={props.bookWeight}  type="number" id="weight" required />
                     </div>
                     <small>* Please, provide weight in KG.</small>
                 </>

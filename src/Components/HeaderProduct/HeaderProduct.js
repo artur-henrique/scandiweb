@@ -52,40 +52,61 @@ const HeaderProduct = (props) => {
     function handleSubmit (e) {
         e.preventDefault();
         const data = {};
-    
-        if (!props.sku || !props.name || !props.price || isNaN(props.price) || !props.type) {
+        const { sku, name, price, type } = props;
+
+        if (!sku || !name || !price || !type) {
             props.setMessage('Please, submit required data.');
             return handleInvalid();
         }
+
+        if (isNaN(price)) {
+            props.setMessage('Price must be a number.');
+            return handleInvalid();
+        }
+
+        if (price < 0) {
+            props.setMessage('Price must be greater than 0.');
+            return handleInvalid();
+        }
     
-        if (props.type === 'book') {
-            if (!props.bookWeight || isNaN(props.bookWeight)) {
+        if (type === 'book') {
+            const { bookWeight } = props;
+            if (!bookWeight) {
+                props.setMessage('Book weight must be filled.');
+                return handleInvalid();
+            }
+
+            if (isNaN(bookWeight)) {
                 props.setMessage('Book weight must be a number.');
                 return handleInvalid();
-            } else {
-                Object.assign(data, { attribute: props.bookWeight });
             }
+
+            Object.assign(data, { attribute: bookWeight });
         }
     
         if (props.type === 'dvd') {
-            if (!props.dvdSize || isNaN(props.dvdSize)) {
+            const { dvdSize } = props;
+
+            if (!dvdSize || isNaN(dvdSize)) {
                 props.setMessage('DVD size must be a number.');
                 return handleInvalid();
             } else {
-                Object.assign(data, { attribute: props.dvdSize });
+                Object.assign(data, { attribute: dvdSize });
             }
         }
     
         if (props.type === 'furniture') {
-            if (!props.furnitureHeight || isNaN(props.furnitureHeight) || !props.furnitureWidth || isNaN(props.furnitureWidth) || !props.furnitureLength || isNaN(props.furnitureLength)) {
+            const { furnitureHeight, furnitureWidth, furnitureLength } = props;
+
+            if (!furnitureHeight || isNaN(furnitureHeight) || !furnitureWidth || isNaN(furnitureWidth) || !furnitureLength || isNaN(furnitureLength)) {
                 props.setMessage('Furniture dimensions must be filled with number (in centimeters).');
                 return handleInvalid();
             } else {
-                Object.assign(data, { attribute: `${props.furnitureHeight}x${props.furnitureWidth}x${props.furnitureLength}` });
+                Object.assign(data, { attribute: `${furnitureHeight}x${furnitureWidth}x${furnitureLength}` });
             }
         }
-        const { sku, name, price, type } = props;
-        Object.assign(data, { sku, name, price, type });
+        
+        Object.assign(data, { sku, name, price: Number(price), type });
         registerProduct(data);
     }
 

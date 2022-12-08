@@ -23,3 +23,8 @@ input[type="submit"] {
 small {
     font-weight: 700;
 }
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+  }

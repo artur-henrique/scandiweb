@@ -15,7 +15,7 @@ const Home = () => {
             setData(data);
         }
         getData();
-    });
+    }, []);
     
     function fetchDelete() {
         const nodeCheckboxes = document.querySelectorAll('.delete-checkbox');
@@ -40,7 +40,7 @@ const Home = () => {
         setDeleteProductCount(deleteProductCount + 1);
     }
 
-    return(
+    return (
         <>
             <Header 
                 title="Product List"
