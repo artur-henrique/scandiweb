@@ -12,6 +12,7 @@
 /build
 
 #env
+.env-cmdrc.json
 .env.development
 .env.production
 
