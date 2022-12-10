@@ -2,13 +2,22 @@ label {
     /* border: 1px solid red; */
     display: inline-block;
     width: 100px;
-    margin: 8px 0;
+    margin-right: 8px;
 }
 
-input[type="submit"] {
-    display: block;
-    margin-top: 8px;
-    padding: 4px 8px;
+input[type="text"], input[type="number"] {
+    display: inline-block;
+    max-width: 250px;
+    margin-bottom: 12px;
+}
+
+select {
+    display: inline-block;
+    max-width: 120px;
+}
+
+.mb-12 {
+    margin-bottom: 12px;
 }
 
 .invalid-data {

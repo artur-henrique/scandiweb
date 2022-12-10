@@ -10,8 +10,8 @@ const Header = (props) => {
             <div className="header">
             <h1>{props.title}</h1>
             <ul className="listAction">
-                <li><button onClick={() => navigate('/addproduct')} >{props.btnTitle1}</button></li>
-                <li id={props.btnID}><button className='delete' onClick={props.callbackFunc}>{props.btnTitle2}</button></li>
+                <li><button className='btn btn-light' onClick={() => navigate('/addproduct')} >{props.btnTitle1}</button></li>
+                <li id={props.btnID}><button className='btn btn-danger' onClick={props.callbackFunc}>{props.btnTitle2}</button></li>
             </ul>
             </div>
             <hr/>

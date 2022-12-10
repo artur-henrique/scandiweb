@@ -123,8 +123,12 @@ const HeaderProduct = (props) => {
             <div className="header">
             <h1>{props.title}</h1>
             <ul className="listAction">
-                <li><button className='save' onClick={handleSubmit} >{props.btnTitle1}</button></li>
-                <li id={props.btnID}><button onClick={() => navigate('/')}>{props.btnTitle2}</button></li>
+                <li>
+                    <button className='btn btn-primary' onClick={handleSubmit} >{props.btnTitle1}</button>
+                </li>
+                <li id={props.btnID}>
+                    <button className='btn btn-light' onClick={() => navigate('/')}>{props.btnTitle2}</button>
+                </li>
             </ul>
             </div>
             <hr/>
