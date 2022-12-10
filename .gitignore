@@ -13,8 +13,6 @@
 
 #env
 .env-cmdrc.json
-.env.development
-.env.production
 
 # misc
 .DS_Store
