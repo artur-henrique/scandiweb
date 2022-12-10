@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import './HeaderProduct.css';
 
-const webURL = "https://scandibackdatabase.herokuapp.com/";
+const webURL = process.env.REACT_APP_BACKEND;
 
 
 const HeaderProduct = (props) => {

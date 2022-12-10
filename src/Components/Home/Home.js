@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import ProductList from "../ProductList/ProductList";
 
-const webURL = "https://scandibackdatabase.herokuapp.com";
+const webURL = process.env.REACT_APP_BACKEND;
+console.log(webURL);
 
 const Home = () => {
     const [ deleteProductCount, setDeleteProductCount ] = useState(0);
