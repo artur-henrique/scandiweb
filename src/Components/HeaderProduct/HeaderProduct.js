@@ -1,13 +1,15 @@
 import { useNavigate } from 'react-router-dom';
 import './HeaderProduct.css';
 
+const webURL = "https://scandibackdatabase.herokuapp.com/";
 
 
 const HeaderProduct = (props) => {
     const navigate = useNavigate();
+    // const localURL='http://localhost:8080';
 
     async function registerProduct(product) {
-        const response = await fetch('http://localhost:8080', {
+        const response = await fetch(webURL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

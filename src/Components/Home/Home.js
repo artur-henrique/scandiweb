@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import ProductList from "../ProductList/ProductList";
 
+const webURL = "https://scandibackdatabase.herokuapp.com";
 
 const Home = () => {
     const [ deleteProductCount, setDeleteProductCount ] = useState(0);
@@ -10,7 +11,7 @@ const Home = () => {
     
     useEffect(() => {
         async function getData() {
-            const response = await fetch('http://localhost:8080');
+            const response = await fetch(webURL);
             const data = await response.json();
             setData(data);
         }
@@ -26,8 +27,10 @@ const Home = () => {
             }
         });
         
+        // const localURL='http://localhost:8080';
+
         const promises = skuList.map(async (product) => {
-            return fetch('http://localhost:8080', {
+            return fetch(webURL, {
                 method: "DELETE",
                 headers: {
                     'Content-Type': 'application/json'
